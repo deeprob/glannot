@@ -21,3 +21,7 @@ dbNSFP: v4.3a
 1. http://useast.ensembl.org/info/docs/tools/vep/script/vep_download.html#docker
 2. https://github.com/Iaguilaror/nf-VEPextended/blob/master/test/data/
 3. https://docs.docker.com/build/building/multi-stage/
+4. https://carpentries-incubator.github.io/singularity-introduction/05-singularity-docker/index.html
+5. https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+6. https://docs.github.com/en/packages/learn-github-packages/connecting-a-repository-to-a-package
+7. https://codefresh.io/docs/docs/integrations/docker-registries/github-container-registry/

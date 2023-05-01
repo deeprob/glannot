@@ -1,6 +1,6 @@
 FROM ensemblorg/ensembl-vep
 
-LABEL Maintainer="dzb5732"
+LABEL org.opencontainers.image.source=https://github.com//deeprob/glannot
 
 USER root
 

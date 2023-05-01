@@ -6,4 +6,5 @@ Push to github - done
 Test on lab computer - done
 Test singularity run on cluster
 Add readme for slurm
-Upload to github
+Upload to github 
+Link github with docker image - done
