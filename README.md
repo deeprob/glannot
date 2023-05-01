@@ -9,8 +9,11 @@ The description of the files and folders present in this repository is as follow
 
 # Current pipeline tools and plugins version numbers
 VEP: release 109
+
 Loftee: v1.0.4 grch38 branch
+
 CADD: v1.6 for SNVs and v1.5 for InDels
+
 dbNSFP: v4.3a
 
 
