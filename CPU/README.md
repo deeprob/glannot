@@ -33,5 +33,5 @@
 
 4. Run pipeline with plugins
     ```bash
-    $ docker run -v $cache_dir:/data -v $input_dir:/input -v $output_dir:/output glannot:0.0.5 vep --cache --vcf -i /input/chr22.vcf.gz -o /output/chr22.vcf  --plugin LoF,loftee_path:/plugins,gerp_bigwig:loftee/gerp_conservation_scores.homo_sapiens.GRCh38.bw,human_ancestor_fa:loftee/human_ancestor.fa.gz,conservation_file:loftee/loftee.sql --plugin CADD,cadd/whole_genome_SNVs.tsv.gz,cadd/InDels.tsv.gz --plugin dbNSFP,dbnsfp/dbNSFP4.3a_grch38.gz,LRT_score,GERP++_RS
+    $ docker run -v $cache_dir:/data -v $input_dir:/input -v $output_dir:/output dzb5732/glannot vep --cache --vcf -i /input/chr22.vcf.gz -o /output/chr22.vcf  --plugin LoF,loftee_path:/plugins,gerp_bigwig:loftee/gerp_conservation_scores.homo_sapiens.GRCh38.bw,human_ancestor_fa:loftee/human_ancestor.fa.gz,conservation_file:loftee/loftee.sql --plugin CADD,cadd/whole_genome_SNVs.tsv.gz,cadd/InDels.tsv.gz --plugin dbNSFP,dbnsfp/dbNSFP4.3a_grch38.gz,LRT_score,GERP++_RS
     ```
