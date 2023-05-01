@@ -1,6 +1,6 @@
 FROM ensemblorg/ensembl-vep
 
-LABEL org.opencontainers.image.source=https://github.com//deeprob/glannot
+LABEL org.opencontainers.image.source=https://github.com/deeprob/glannot
 
 USER root
 
