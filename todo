@@ -1,0 +1,6 @@
+Update readme for CPU - done
+Add version number of each cache files and software in main readme - done
+Update .gitignore - done
+Build image and upload to docker hub - done
+Push to github
+Test on lab computer

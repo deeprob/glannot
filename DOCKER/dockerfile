@@ -1,0 +1,22 @@
+FROM ensemblorg/ensembl-vep
+
+LABEL Maintainer="dzb5732"
+
+USER root
+
+# install required packages and purge
+RUN apt-get -y update && apt-get -y install \
+    git \
+    samtools
+
+# setup loftee plugin inside existing plugins dir
+RUN cd $VEP_DIR_PLUGINS && \
+    git clone --single-branch --branch grch38 https://github.com/konradjk/loftee.git && \
+    mv ./loftee/* ./ && \
+    rm -r loftee/
+
+# Set working directory as symlink to $OPT/.vep (containing VEP cache and data)
+USER root
+RUN ln -s $OPT/.vep /data
+USER vep
+WORKDIR /data
