@@ -14,7 +14,7 @@
 
 ## Run annotation pipeline using docker 
 
-1. Pull the docker image from docker hub
+1. Pull the docker image from GHCR
     ```bash
     $ docker pull ghcr.io/deeprob/glannot:latest
     ```
@@ -28,10 +28,10 @@
 
 3. Download cache files required by VEP
     ```bash
-    $ docker run -t -i -v $cache_dir:/data ghcr.io/deeprob/glannot:latest INSTALL.pl -a cf -s homo_sapiens -y GRCh38
+    $ docker run -t -i -v $cache_dir:/data ghcr.io/deeprob/glannot:latest INSTALL.pl -a cf -s homo_sapiens -y GRCh38 --CACHEDIR /data
     ```
 
 4. Run pipeline with plugins
     ```bash
-    $ docker run -v $cache_dir:/data -v $input_dir:/input -v $output_dir:/output ghcr.io/deeprob/glannot:latest vep --cache --vcf -i /input/chr22.vcf.gz -o /output/chr22.vcf  --plugin LoF,loftee_path:/plugins,gerp_bigwig:loftee/gerp_conservation_scores.homo_sapiens.GRCh38.bw,human_ancestor_fa:loftee/human_ancestor.fa.gz,conservation_file:loftee/loftee.sql --plugin CADD,cadd/whole_genome_SNVs.tsv.gz,cadd/InDels.tsv.gz --plugin dbNSFP,dbnsfp/dbNSFP4.3a_grch38.gz,LRT_score,GERP++_RS
+    $ docker run -v $cache_dir:/data -v $input_dir:/input -v $output_dir:/output ghcr.io/deeprob/glannot:latest vep --cache --dir_cache /data --vcf -i /input/chr22.vcf.gz -o /output/chr22.vcf  --plugin LoF,loftee_path:/plugins,gerp_bigwig:loftee/gerp_conservation_scores.homo_sapiens.GRCh38.bw,human_ancestor_fa:loftee/human_ancestor.fa.gz,conservation_file:loftee/loftee.sql --plugin CADD,cadd/whole_genome_SNVs.tsv.gz,cadd/InDels.tsv.gz --plugin dbNSFP,dbnsfp/dbNSFP4.3a_grch38.gz,LRT_score,GERP++_RS
     ```
