@@ -14,7 +14,7 @@ Loftee: v1.0.4 grch38 branch
 
 CADD: v1.6 for SNVs and v1.5 for InDels
 
-dbNSFP: v4.3a
+dbNSFP: v4.4a
 
 
 # Resources

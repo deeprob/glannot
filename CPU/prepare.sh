@@ -25,11 +25,12 @@ cd ../
 mkdir dbnsfp
 cd dbnsfp
 echo "Downloading dbNSFP files ..."
-wget -c ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.3a.zip
-unzip dbNSFP4.3a.zip
-zcat dbNSFP4.3a_variant.chr1.gz | head -n1 > h
-zgrep -h -v ^#chr dbNSFP4.3a_variant.chr* | sort -k1,1 -k2,2n - | cat h - | bgzip -c > dbNSFP4.3a_grch38.gz
-tabix -s 1 -b 2 -e 2 dbNSFP4.3a_grch38.gz
+version=4.4a
+wget -c ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP${version}.zip
+unzip dbNSFP${version}.zip
+zcat dbNSFP${version}_variant.chr1.gz | head -n1 > h
+zgrep -h -v ^#chr dbNSFP${version}_variant.chr* | sort -k1,1 -k2,2n - | cat h - | bgzip -c > dbNSFP${version}_grch38.gz
+tabix -s 1 -b 2 -e 2 dbNSFP${version}_grch38.gz
 echo "dbNSFP files downloaded."
 cd ../
 
